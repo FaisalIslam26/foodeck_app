@@ -6,3 +6,12 @@ const Ktextstyle = TextStyle(
 );
 
 const kcontainer1Color = Color(0xFFDD4B39);
+
+const kSizedbox = SizedBox(
+  height: 12,
+);
+
+const kCreateTextStyle = TextStyle(
+  color: Color(0xFFF8E8E93),
+  fontSize: 17,
+);

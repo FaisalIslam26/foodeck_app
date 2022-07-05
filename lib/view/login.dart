@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:foodeck_app/constraints.dart';
 import 'package:foodeck_app/container_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:foodeck_app/custom_button.dart';
 import 'package:foodeck_app/view/login_email.dart';
 
 class LoginScreen extends StatelessWidget {
+  static const String path = 'LoginScreen';
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
@@ -20,94 +22,76 @@ class LoginScreen extends StatelessWidget {
             'assets/images/ima_1.png',
             fit: BoxFit.fill,
           ),
-          CustomContainer(
-            icon: FaIcon(
-              FontAwesomeIcons.google,
-              color: Colors.white,
-            ),
-            title: 'Login via Google',
-            Colour: Color(0xffDD4B39),
+          CustomButton(
+            onTap: () {
+              Navigator.pushNamed(context, LoginViaEmail.path);
+            },
+            labeltext: 'Login Via Google',
+            Styletext: Ktextstyle,
+            icon: FaIcon(FontAwesomeIcons.google),
+            Colours: Color(0xFFFDD4B39),
           ),
-          SizedBox(
-            height: 20,
+          kSizedbox,
+          CustomButton(
+            onTap: () {
+              Navigator.pushNamed(context, LoginViaEmail.path);
+            },
+            labeltext: 'Login Via Facebook',
+            Styletext: Ktextstyle,
+            icon: FaIcon(FontAwesomeIcons.facebook),
+            Colours: Color(0xFFF3B5998),
           ),
-
-          CustomContainer(
-            icon: FaIcon(
-              FontAwesomeIcons.facebook,
-              color: Colors.white,
-            ),
-            title: 'Login via Facebook',
-            Colour: Color(0xff3B5998),
+          kSizedbox,
+          CustomButton(
+            onTap: () {
+              Navigator.pushNamed(context, LoginViaEmail.path);
+            },
+            labeltext: 'Login Via Apple',
+            Styletext: Ktextstyle,
+            icon: FaIcon(FontAwesomeIcons.apple),
+            Colours: Color(0xFFF000000),
           ),
-          // Container(
-          //   width: 328,
-          //   height: 62,
-          //   padding: EdgeInsets.symmetric(vertical: 15),
-          //   decoration: BoxDecoration(
-          //     color: Color(0xff3B5998),
-          //     borderRadius: BorderRadius.circular(20),
-          //   ),
-          //   child: Text(
-          //     'Login via Facebook',
-          //     textAlign: TextAlign.center,
-          //     style: TextStyle(color: Colors.white, fontSize: 17),
-          //   ),
-          // ),
-          SizedBox(
-            height: 10,
+          kSizedbox,
+          CustomButton(
+            onTap: () {
+              Navigator.pushNamed(context, LoginViaEmail.path);
+            },
+            labeltext: 'Login Via Email',
+            Styletext: Ktextstyle,
+            icon: FaIcon(FontAwesomeIcons.google),
+            Colours: Color(0xFFFF05193),
           ),
-          CustomContainer(
-            icon: FaIcon(
-              FontAwesomeIcons.apple,
-              color: Colors.white,
-            ),
-            title: 'Login via Apple',
-            Colour: Color(0xFF000000),
+          kSizedbox,
+          CustomButton(
+            onTap: () {
+              Navigator.pushNamed(context, LoginViaEmail.path);
+            },
+            labeltext: 'Create an Account',
+            Styletext: kCreateTextStyle,
+            icon: Icon(Icons.create),
+            Colours: Color(0xFFFE5E5E5),
           ),
-
-          SizedBox(
-            height: 10,
-          ),
-
-          // CustomContainer(
-          //   icon: Icon(
-          //     Icons.mail,
-          //     color: Colors.white,
-          //   ),
-          //   title: 'Login via Email',
-          //   Colour: Color(0xffF05193),
-          // ),
-
-          ElevatedButton.icon(
-            onPressed: () {},
-            icon: Icon(Icons.mail),
-            label: Text('Login with Email'),
-            style: ElevatedButton.styleFrom(
-                primary: Color(0xffF05193),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+          kSizedbox,
+          RichText(
+            text: TextSpan(
+              children: <TextSpan>[
+                TextSpan(
+                  text: 'By Signing up, you are aggreeing to Our',
+                  style: TextStyle(
+                    color: Color(0xFFF8E8E93),
+                    fontSize: 13,
+                  ),
                 ),
-                padding: EdgeInsets.symmetric(horizontal: 90, vertical: 15)),
-          ),
-
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            width: 328,
-            height: 62,
-            decoration: BoxDecoration(
-              color: Color(0xffE5E5E5),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Text(
-              'Create an Account',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Color(0xff8E8E93), fontSize: 17),
+                TextSpan(
+                  text: 'Terms & Conditions',
+                  style: TextStyle(
+                    color: Color(0xFFFF05193),
+                    fontSize: 13,
+                  ),
+                ),
+              ],
             ),
           ),
-          Text('By Signing up, you are aggreeing to Our Terms & Conditions')
         ],
       ),
     );
